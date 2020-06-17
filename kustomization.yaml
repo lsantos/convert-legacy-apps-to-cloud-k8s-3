@@ -1,0 +1,12 @@
+kind: Kustomization
+secretGenerator:
+- name: mysql-pass
+  literals:
+  - user=empuser
+  - password=password
+  - root-password=123
+namespace: profile-app
+resources:
+  - namespace.yaml
+  - mysql-deployment.yaml
+  - profile-app-deployment.yaml
